@@ -1,0 +1,14 @@
+{
+  "name": "Jupyter + ElasticSearch",
+  "dockerComposeFile": "docker-compose.yml",
+  "service": "jupyter",
+  "mounts": [
+    "source=${localEnv:HOME}${localEnv:USERPROFILE}/.aws/credentials,target=/home/jovyan/.aws/credentials,type=bind"
+  ],
+  "workspaceFolder": "/home/jovyan/work",
+  "extensions": [
+    "ms-python.python",
+    "ms-azuretools.vscode-docker"
+  ],
+  "postCreateCommand": "pip install tqdm elasticsearch boto3"
+}
