@@ -9,6 +9,7 @@ services:
     environment:
       - JUPYTER_ENABLE_LAB=yes
       - GRANT_SUDO=yes
+      - JUPYTER_TOKEN=easy
 
   elasticsearch:
     image: docker.elastic.co/elasticsearch/elasticsearch:8.4.3

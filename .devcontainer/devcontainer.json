@@ -20,5 +20,8 @@
     "ms-python.mypy-type-checker",
     "ms-python.black-formatter"
   ],
+  "containerEnv": {
+    "JUPYTER_TOKEN": "easy"
+  }
   "postCreateCommand": "pip install tqdm elasticsearch boto3"
 }
