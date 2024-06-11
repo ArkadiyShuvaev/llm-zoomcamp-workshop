@@ -11,7 +11,8 @@ class RetrievalResult():
 
     def __str__(self):
         return (
-            f"RetrivalResult: score={self.score}, section={self.section}, "
-            f"course={self.course}, question={self.question}, "
-            f"answer={self.answer}"
+            f"Section={self.section}, "
+            f"Question={self.question}, "
+            f"Answer={self.answer}, "
+            f"Score={self.score}"
         )
