@@ -23,5 +23,5 @@
   "containerEnv": {
     "JUPYTER_TOKEN": "easy"
   }
-  "postCreateCommand": "pip install tqdm elasticsearch boto3"
+  "postCreateCommand": "pip install tqdm elasticsearch boto3 streamlit"
 }
