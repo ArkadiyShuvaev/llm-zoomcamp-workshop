@@ -1,4 +1,4 @@
-The master class is based on materials from the repository https://github.com/alexeygrigorev/llm-rag-workshop.
+The workshop is based on materials from the repository https://github.com/alexeygrigorev/llm-rag-workshop.
 
 The purpose of the workshop is to gain experience in building a RAG system to communicate with your data.
 Some changes have been made compared to the original version:
