@@ -23,6 +23,16 @@ if "history" not in st.session_state:
 # Create a text input for user question
 user_question = st.text_input("Enter your question:")
 
+
+def get_text_box_heigth(str) -> int:
+    lines_based_on_number_of_symbols = int(len(str) / 80) + 1
+    lines_based_on_number_of_new_lines = str.count("\n") + 1
+    lines = max(lines_based_on_number_of_symbols, lines_based_on_number_of_new_lines)
+
+    height = max(25, lines * 25)  # Approximate height: 25px per line
+    return height
+
+
 if st.button('Generate Answer'):
     # Generate answer
     retrieval_result = retrieval_service.get_retrival_result(user_question, SEARCH_FILTER_TERM, INDEX_NAME, es)
@@ -31,7 +41,8 @@ if st.button('Generate Answer'):
     answer = generation_service.get_answer(prompt, bedrock_runtime)
 
     # Display the answer
-    st.text_area("Answer:", value=answer, height=200)
+    height = get_text_box_heigth(answer)
+    st.text_area("Answer:", value=answer, height=height)
 
     # Add the question and answer to the history
     st.session_state.history.append((user_question, answer))
@@ -40,4 +51,4 @@ if st.button('Generate Answer'):
 st.subheader("History")
 for i, (question, answer) in enumerate(st.session_state.history):
     st.text(f"Q{i+1}: {question}")
-    st.text_area(f"A{i+1}:", value=answer, height=100)
+    st.text_area(f"A{i+1}:", value=answer, height=40)

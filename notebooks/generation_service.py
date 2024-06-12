@@ -29,7 +29,8 @@ class GenerationService:
         body_as_plain_text = response.get('body').read()
         response_body = json.loads(body_as_plain_text)
 
-        return response_body["results"][0]["outputText"]
+        result = response_body["results"][0]["outputText"]
+        return result.strip()
 
     def create_prompt(self, user_question: str, context: str) -> str:
         return (
