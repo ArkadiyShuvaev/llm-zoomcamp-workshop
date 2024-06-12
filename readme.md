@@ -4,7 +4,7 @@ The purpose of the workshop is to gain experience in building a RAG system to co
 Some changes have been made compared to the original version:
 1. OpenAI API replaced with AWS Bedrock text model.
 1. Added a user interface based on the "streamlit" library.
-1. The project can be completed in the VS Code dev container.
+1. The project can be started in the VS Code dev container.
 
 ## How to run UI
 1. Execute the command below in a shell.
